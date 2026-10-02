@@ -24,6 +24,40 @@ function loadProductTable() {
     });
 }
 
+//animacion de burbujas
+function showBubbles() {
+
+    const container = document.getElementById('bubbleContainer');
+
+    for (let i = 0; i < 15; i++) {
+
+        const bubble = document.createElement('div');
+
+        bubble.classList.add('bubble');
+
+        // Posición horizontal aleatoria
+        bubble.style.left = `${Math.random() * 100}%`;
+
+        // Tamaño aleatorio
+        const size = 40 + Math.random() * 50;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+
+        // Duración aleatoria
+        bubble.style.animationDuration = `${2 + Math.random() * 2}s`;
+
+        // Retraso aleatorio
+        bubble.style.animationDelay = `${Math.random() * 0.8}s`;
+
+        container.appendChild(bubble);
+
+        // Eliminar la burbuja después de la animación
+        setTimeout(() => {
+            bubble.remove();
+        }, 4000);
+    }
+}
+
 // Function to add a new product
 function addProduct() {
     const name = document.getElementById('name').value.trim();
@@ -55,6 +89,7 @@ function addProduct() {
 
     //Update the table with the new product
     loadProductTable();
+    showBubbles();
 }
 
 //Function to delete a product
