@@ -145,7 +145,7 @@ td {
     width: 70px;
     height: 70px;
 
-    background-image: url('/images/bubble_.png');
+    background-image: url('./images/bubble_.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
