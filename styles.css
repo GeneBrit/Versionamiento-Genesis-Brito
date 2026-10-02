@@ -129,3 +129,46 @@ td {
     background-color: #FFF;
     color: #000;
 }
+
+#bubbleContainer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+
+    width: 70px;
+    height: 70px;
+
+    background-image: url('/images/bubble_.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    animation: bubbleFloat 2.5s ease-out forwards;
+}
+
+@keyframes bubbleFloat {
+    0% {
+        transform: translateY(0) scale(0.4);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-50vh) scale(1);
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.2);
+        opacity: 0;
+    }
+}
